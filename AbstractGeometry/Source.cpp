@@ -1,18 +1,18 @@
-#include<iostream>
+п»ї#include<iostream>
 #include<string>
 using namespace std;
 
 enum Color
 {
-	console_gray = 0x88,		//0x88-шестнадцатеричный код цвета
+	console_gray = 0x88,		//0x88-С€РµСЃС‚РЅР°РґС†Р°С‚РµСЂРёС‡РЅС‹Р№ РєРѕРґ С†РІРµС‚Р°
 	console_green=0xAA,
 	console_blue=0x99,
 	console_red = 0xCC,
 	console_white = 0xFF
 };
-//enum - перечисление. Перечисление - это набор именнованных констант типа int
+//enum - РїРµСЂРµС‡РёСЃР»РµРЅРёРµ. РџРµСЂРµС‡РёСЃР»РµРЅРёРµ - СЌС‚Рѕ РЅР°Р±РѕСЂ РёРјРµРЅРЅРѕРІР°РЅРЅС‹С… РєРѕРЅСЃС‚Р°РЅС‚ С‚РёРїР° int
 
-class Shape	//класс Фигура
+class Shape	//РєР»Р°СЃСЃ Р¤РёРіСѓСЂР°
 {
 protected:
 	Color color;
@@ -76,30 +76,30 @@ public:
 
 class Triangle : public Shape
 {
-	double sideС;
+	double sideРЎ;
 	double height;
 public:
 	double get_side()const
 	{
-		return sideС;
+		return sideРЎ;
 	}
 	double get_height()const
 	{
 		return height;
 	}
-	void set_side(double sideС)
+	void set_side(double sideРЎ)
 	{
-		if (sideС <= 0)sideС = 1;
-		this->sideС;
+		if (sideРЎ <= 0)sideРЎ = 1;
+		this->sideРЎ;
 	}
 	void set_height(double height)
 	{
 		if (height <= 0)height = 1;
 		this->height = height;
 	}
-	Triangle(double sideС, double height, Color color) :Shape(color)
+	Triangle(double sideРЎ, double height, Color color) :Shape(color)
 	{
-		set_side(sideС);
+		set_side(sideРЎ);
 		set_height(height);
 		cout << "TConstructor:\t" << this << endl;
 	}
@@ -109,17 +109,17 @@ public:
 	}
 	double get_area()const
 	{
-		return (sideС * height)* 0.5;
+		return (sideРЎ * height)* 0.5;
 	}
 	double get_perimeter()const
 	{
-		return sideС * 3;
+		return sideРЎ * 3;
 	}
 	void draw()const
 	{
-		for (int i = 0; i < sideС; i++)
+		for (int i = 0; i < sideРЎ; i++)
 		{
-			for (int j = i; j < sideС; j++)
+			for (int j = i; j < sideРЎ; j++)
 			{
 				cout << " ";
 			}
@@ -226,22 +226,22 @@ void main()
 {
 	setlocale(LC_ALL, "ru");
 	Square square(5, Color::console_red);
-	cout << "Площадь квадрата: " << square.get_area() << endl;
-	cout << "Периметр квадрата: " << square.get_perimeter() << endl;
+	cout << "РџР»РѕС‰Р°РґСЊ РєРІР°РґСЂР°С‚Р°: " << square.get_area() << endl;
+	cout << "РџРµСЂРёРјРµС‚СЂ РєРІР°РґСЂР°С‚Р°: " << square.get_perimeter() << endl;
 	square.draw();
 
 	Triangle triangle(2, 5, Color::console_red);
-	cout << "Площадь треугольника: " << triangle.get_area() << endl;
-	cout << "Периметр треугольника: " << triangle.get_perimeter() << endl;
+	cout << "РџР»РѕС‰Р°РґСЊ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР°: " << triangle.get_area() << endl;
+	cout << "РџРµСЂРёРјРµС‚СЂ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР°: " << triangle.get_perimeter() << endl;
 	triangle.draw();
 
 	Rectangle rectangle(4, 2, Color::console_red);
-	cout << "Площадь прямоугольника: " << rectangle.get_area() << endl;
-	cout << "Периметр прямоугольника: " << rectangle.get_perimeter() << endl;
+	cout << "РџР»РѕС‰Р°РґСЊ РїСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРєР°: " << rectangle.get_area() << endl;
+	cout << "РџРµСЂРёРјРµС‚СЂ РїСЂСЏРјРѕСѓРіРѕР»СЊРЅРёРєР°: " << rectangle.get_perimeter() << endl;
 	rectangle.draw();
 
 	Circle circle(6, 3.14, Color::console_blue);
-	cout << "Площадь круга: " << circle.get_area() << endl;
-	cout << "Периметр круга: " << circle.get_perimeter() << endl;
+	cout << "РџР»РѕС‰Р°РґСЊ РєСЂСѓРіР°: " << circle.get_area() << endl;
+	cout << "РџРµСЂРёРјРµС‚СЂ РєСЂСѓРіР°: " << circle.get_perimeter() << endl;
 	circle.draw();
 } 
